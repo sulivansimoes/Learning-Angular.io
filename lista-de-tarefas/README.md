@@ -4,7 +4,7 @@ Aplicativo para controle de tarefas e pendências.
 
 # Conteúdos revistos
 - ```binding```
-- ```compoents```
+- ```components```
 - ```services```
 - ```localStorage```
 - ```CSS```
