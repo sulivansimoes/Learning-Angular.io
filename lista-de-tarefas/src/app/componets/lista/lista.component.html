@@ -1,0 +1,76 @@
+<div class="box">
+    
+    <textarea  cols="50" 
+               rows="4"
+               minlength="15"
+               maxlength="250"
+               placeholder="digite a nova tarefa"
+               [(ngModel)]="tarefa.descricao"    
+    >
+    </textarea>
+    
+    <input type="button"  
+           id="buttonSalvar"
+           autocomplete="off"  
+           class="buttonSalvar" 
+           (click)="onSalva()" 
+           value="salva tarefa">
+    
+    <p *ngIf="tarefaVazia"
+        class="preenchimentoObrigatorio"
+        >
+        Digite a tarefa
+    </p>
+
+    <input type="text" 
+           [(ngModel)]="pesquisa" 
+           (keyup)="pesquisaTarefa()"
+           placeholder="pesquise uma tarefa aqui."
+           class="buttonPesquisar" >
+
+    <!-- TAREFAS -->
+    <table>
+        <thead>
+            <th>
+                Feita
+            </th>
+            <th>
+                Tarefa
+            </th>
+            <th>    
+                #
+            </th>
+            <th>    
+                #
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tarefa of listaToView" 
+                [class]="tarefa.isConcluida ? 'tarefaConcluida':'tarefaNaoConcluida' ">
+
+                <td>
+                    <input type="checkbox" 
+                           (change)="updateStatus(tarefa)"
+                           [(ngModel)]="tarefa.status">
+                </td>
+                <td>
+                    {{tarefa.descricao}}
+                </td>
+                <td>
+                    <input type="button" 
+                           class="buttonEditar" 
+                           (click)="openTarefa(tarefa)">
+                </td>
+                <td>
+                    <input type="button" 
+                           class="buttonExclui" 
+                           (click)="removeTarefa(tarefa)">
+                </td>                
+            </tr> 
+            <tr *ngIf="listaToView.length < 1">
+                lista vazia
+            </tr>
+        </tbody>
+    </table>
+
+</div>
