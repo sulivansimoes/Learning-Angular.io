@@ -1,5 +1,5 @@
 /**
- * @description : Classe de Objeto de tranferecia ( TO ) da descricao 
+ * @description : Classe de Objeto de tranferecia ( TO ) da tarefa 
  */
 export class Tarefa{
     
@@ -20,27 +20,27 @@ export class Tarefa{
     }
 
     /**
-     * @description: Retorna código do id da descricao
-     * @return {number} ( id ) - identificador da descricao
+     * @description: Retorna código do id da tarefa
+     * @return {number} ( id ) - identificador da tarefa
      */
     get id (): number { return this._id }
 
     /**
-     * @description: Inclui/Altera código de id da descricao
-     * @param {number} ( id ) - identificador da descricao
+     * @description: Inclui/Altera código de id da tarefa
+     * @param {number} ( id ) - identificador da tarefa
      */
     set id (id:number) { 
         this._id = id < 1 ? 1 : id+1;
     }
 
     /**
-     * @description: Retorna descrição da descricao
+     * @description: Retorna descrição da tarefa
      * @return {String} ( descricao ) - descrição da descricao 
      */
     get descricao (): String { return this._descricao }
 
     /**
-     * @description: altera descrição da descricao
+     * @description: altera descrição da tarefa
      * @param {String} ( descricao ) - descrição da descricao a ser executada
      */
     set descricao (descricao:String) { 
@@ -48,22 +48,22 @@ export class Tarefa{
     }
 
     /**
-     * @description: Retorna status da descricao
-     * @return {boolean} ( status ) - status indicando se a descricao já foi feita/concluida ou não
+     * @description: Retorna status da tarefa
+     * @return {boolean} ( status ) - status indicando se a tarefa já foi feita/concluida ou não
      */
     get isConcluida ():boolean{ return this._status }
 
     /**
-     * @description: Retorna status da descricao
-     * @return {boolean} ( status ) - status indicando se a descricao já foi feita/concluida ou não
+     * @description: Retorna status da tarefa
+     * @return {boolean} ( status ) - status indicando se a tarefa já foi feita/concluida ou não
      */
     get status():boolean{
         return this.isConcluida
     }
 
     /**
-     * @description: altera status da da descricao
-     * @param {boolean} ( status ) - status indicando se a descricao já foi feita/concluida ou não. 
+     * @description: altera status da da tarefa
+     * @param {boolean} ( status ) - status indicando se a tarefa já foi feita/concluida ou não. 
      * true caso esteja conscluida, false caso contrário.
      */
     set status (status:boolean) { 
