@@ -14,4 +14,4 @@ Aplicativo para controle de tarefas e pendências.
 # Preview da aplicação.
 *Observação: O gif não está com precisão com relação ao mouse*
 
-![demonstração do aplicativo](https://github.com/sulivansimoes/Learning-Angular.io/blob/8b089668a829b4bf235ddbf92795215d7b1fd4c7/lista-de-tarefas/preview_app/app.gif)
+![demonstração do aplicativo](https://github.com/sulivansimoes/Learning-Angular.io/blob/ef34d0977792de04d77076b972f84cfd9a15260a/lista-de-tarefas/preview_app/app.gif)
