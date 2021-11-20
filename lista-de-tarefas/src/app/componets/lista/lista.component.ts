@@ -66,7 +66,7 @@ export class ListaComponent implements OnInit {
   addTarefa() {
 
     this.tarefa.id = new Date().getTime()
-    this.listaToModel.push(this.tarefa)
+    this.listaToModel.unshift(this.tarefa)
     this.tarefaService.salva( this.listaToModel )
     this.loadTarefas()
     this.tarefa = new Tarefa()
