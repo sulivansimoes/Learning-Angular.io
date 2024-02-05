@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HousingLocation } from '../interface/housing-location';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
-import { getDataBase } from '../data/database';
+import { HousingLocationService } from '../service/housing-location.service';
 
 @Component({
   selector: 'app-home',
@@ -23,5 +23,14 @@ import { getDataBase } from '../data/database';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  housingLocationList: HousingLocation[] = getDataBase()
+
+  //Adicionando inje??o de dependencia usando o inject 
+  housingLocationService: HousingLocationService = inject(HousingLocationService)
+
+  housingLocationList: HousingLocation[] = []
+
+  constructor() {
+    this.housingLocationList = this.housingLocationService.getAllHousingLocation()
+  }
+
 }

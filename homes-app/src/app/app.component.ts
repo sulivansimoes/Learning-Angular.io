@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component'; //importa??o em nivel de arquivo
-import { HousingLocationComponent } from './housing-location/housing-location.component';
+import { HomeComponent } from './home/home.component'; //importacao em nivel de arquivo
+
+import { RouterModule } from '@angular/router';
+
 @Component({
   standalone: true,
   selector: 'app-root',
@@ -10,11 +12,11 @@ import { HousingLocationComponent } from './housing-location/housing-location.co
           <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
         </header>
         <section>
-          <app-home></app-home>
+          <router-outlet></router-outlet>
         </section>
       </main>`,
   styleUrls: ['./app.component.css'],
-  imports: [HomeComponent, HousingLocationComponent] //importa dependencia no metadados do componente 
+  imports: [HomeComponent, RouterModule] //importa dependencia no metadados do componente 
 })
 export class AppComponent {
   title = 'homes';
