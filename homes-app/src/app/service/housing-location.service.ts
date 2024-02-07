@@ -7,11 +7,9 @@ import dataBaseHouseLocation from '../data/database';
 })
 export class HousingLocationService {
 
-  protected housingLocationList: HousingLocation[] = []
+  url = 'http://localhost:3000/locations';
 
   constructor() {
-
-    this.housingLocationList = dataBaseHouseLocation;
   }
 
   /**
@@ -19,9 +17,10 @@ export class HousingLocationService {
    * @function getAllHousingLocation
    * @returns {housingLocationList} all locations of database
    */
-  getAllHousingLocation(): HousingLocation[] {
+  async getAllHousingLocation(): Promise<HousingLocation[]> {
 
-    return this.housingLocationList;
+    const data = await fetch(this.url);
+    return await data.json() ?? [];
   }
 
   /**
@@ -30,10 +29,13 @@ export class HousingLocationService {
    * @returns {HousingLocation | undefined} returns HousingLocation of the id
    * @example getLocactionById(0)
    */
-  getLocactionById(id: Number): HousingLocation | undefined {
+  async getLocactionById(id: Number): Promise<HousingLocation | undefined> {
 
-    return this.housingLocationList.find(housingLocation => (
-      housingLocation.id === id
-    ));
+    const data = await fetch(`${this.url}/${id}`);
+    return await data.json() ?? {}
+  }
+
+  submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(firstName, lastName, email)
   }
 }

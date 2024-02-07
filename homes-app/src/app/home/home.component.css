@@ -22,19 +22,22 @@ button {
   background: var(--primary-color);
   color: white;
   border-radius: 8px;
+  background-color: rgb(167, 110, 219) !important;
+
 }
 
 @media (min-width: 500px) and (max-width: 768px) {
   .results {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
+
   input[type="text"] {
-      width: 70%;
-  }   
+    width: 70%;
+  }
 }
 
 @media (max-width: 499px) {
   .results {
-      grid-template-columns: 1fr;
-  }    
+    grid-template-columns: 1fr;
+  }
 }
